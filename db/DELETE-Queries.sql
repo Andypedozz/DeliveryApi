@@ -1,0 +1,8 @@
+DELETE FROM RefreshToken;
+DELETE FROM ProdottiOrdine;
+DELETE FROM Ordine;
+DELETE FROM Cliente;
+DELETE FROM Indirizzo;
+DELETE FROM Zona;
+DELETE FROM Prodotto;
+DELETE FROM Rider;
