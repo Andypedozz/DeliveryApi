@@ -15,6 +15,13 @@ INSERT INTO Prodotto (Codice, Nome, Prezzo, Descrizione) VALUES
 (14, 'Birra', 3, 'Bottiglia 0.33L'),
 (15, 'Caffè', 1, 'Espresso italiano');
 
+INSERT INTO Rider (Codice, Nome, Cognome, Email, Password, Telefono) VALUES
+(1, 'Luca', 'Bianchi', 'luca.bianchi@example.com', 'pass1234', '3331112222'),
+(2, 'Giulia', 'Rossi', 'giulia.rossi@example.com', 'qwerty89', '3332223333'),
+(3, 'Marco', 'Verdi', 'marco.verdi@example.com', 'securePass1', '3333334444'),
+(4, 'Sara', 'Neri', 'sara.neri@example.com', 'pwSara2024', '3334445555'),
+(5, 'Davide', 'Gallo', 'davide.gallo@example.com', 'daviPass!', '3335556666');
+
 INSERT INTO Zona (Nome) VALUES
 ('Centro'),
 ('Nord'),
@@ -72,16 +79,16 @@ INSERT INTO Ordine (Codice, CodiceCliente, Nominativo, CodiceIndirizzo, Stato, T
 (3, 3, 'Laura Bianchi', 3, 'Da assegnare', 'Carta', NULL, 3,'18:15'),
 (4, 4, 'Giovanni Neri', 4, 'Consegnato', 'Contanti', NULL, 4,'18:15'),
 (5, 5, 'Sofia Conti', 5, 'In consegna', 'Contanti', NULL, 5,'18:15'),
-(6, 6, 'Alessandro Ricci', 6, 'Consegnato', 'Carta', NULL, 6,'18:15'),
-(7, 7, 'Elena Greco', 7, 'Annullato', 'Contanti', NULL, 7,'18:15'),
-(8, 8, 'Francesco Esposito', 8, 'Consegnato', 'Carta', NULL, 8,'18:15'),
-(9, 9, 'Chiara Costa', 9, 'In consegna', 'Contanti', NULL, 9,'18:15'),
-(10, 10, 'Andrea Ferri', 10, 'Da assegnare', 'Contanti', NULL, 10,'18:15'),
-(11, 11, 'Lucia Barbieri', 11, 'Consegnato', 'Carta', NULL, 11,'18:15'),
-(12, 12, 'Matteo De Santis', 12, 'Consegnato', 'Contanti', NULL, 12,'18:15'),
-(13, 13, 'Valentina Marino', 13, 'In consegna', 'Carta', NULL, 13,'18:15'),
-(14, 14, 'Davide Romano', 14, 'Da assegnare', 'Carta', NULL, 14,'18:15'),
-(15, 15, 'Irene Gallo', 15, 'Consegnato', 'Contanti', NULL, 15,'18:15');
+(6, 6, 'Alessandro Ricci', 6, 'Consegnato', 'Carta', NULL, 1,'18:15'),
+(7, 7, 'Elena Greco', 7, 'Annullato', 'Contanti', NULL, 2,'18:15'),
+(8, 8, 'Francesco Esposito', 8, 'Consegnato', 'Carta', NULL, 3,'18:15'),
+(9, 9, 'Chiara Costa', 9, 'In consegna', 'Contanti', NULL, 4,'18:15'),
+(10, 10, 'Andrea Ferri', 10, 'Da assegnare', 'Contanti', NULL, 5,'18:15'),
+(11, 11, 'Lucia Barbieri', 11, 'Consegnato', 'Carta', NULL, 1,'18:15'),
+(12, 12, 'Matteo De Santis', 12, 'Consegnato', 'Contanti', NULL, 2,'18:15'),
+(13, 13, 'Valentina Marino', 13, 'In consegna', 'Carta', NULL, 3,'18:15'),
+(14, 14, 'Davide Romano', 14, 'Da assegnare', 'Carta', NULL, 4,'18:15'),
+(15, 15, 'Irene Gallo', 15, 'Consegnato', 'Contanti', NULL, 5,'18:15');
 
 INSERT INTO ProdottiOrdine (CodiceProdotto, CodiceOrdine, Quantita) VALUES
 (1, 1, 2),
@@ -104,3 +111,4 @@ INSERT INTO ProdottiOrdine (CodiceProdotto, CodiceOrdine, Quantita) VALUES
 (3, 14, 1),
 (4, 15, 2),
 (5, 15, 1);
+

@@ -109,4 +109,22 @@ app.get('/consegnati', async (req, res) => {
     }
 });
 
+app.get("/associati/:codiceRider", async (req, res) => {
+    const codiceRider = req.params.codiceRider;
+    const query = `SELECT Cliente.Nome as Nome, Cliente.Cognome,
+            Indirizzo.Nome as Indirizzo, Indirizzo.Civico, Indirizzo.Zona, Indirizzo.Cap,
+            Ordine.TipoPagamento, Ordine.OrarioConsegna
+            FROM Cliente, Indirizzo, Ordine
+            WHERE Cliente.Codice = Ordine.CodiceCliente
+            AND Ordine.CodiceIndirizzo = Indirizzo.Codice
+            AND Ordine.CodiceRider = ?`;
+    
+    try{
+        const orders = await fetchAll(db, query, [codiceRider]);
+        return res.json(orders);
+    } catch(err) {
+        return res.json({ error: err })
+    }
+})
+
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
