@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const sqlite3 = require("sqlite3").verbose()
 const path = require("path")
 const { fetchFirst, fetchAll, execute } = require("./db/db_wrapper.js"); 
@@ -7,6 +8,7 @@ const app = express();
 
 const PORT = 5000;
 
+app.use(cors())
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/")));
 
